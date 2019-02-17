@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cardealerapp.FXMLDocumentController">
+   <top>
+      <HBox alignment="CENTER" prefHeight="80.0" prefWidth="602.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Toyota">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="toyotaPicture" fitHeight="53.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </HBox>
+   </top>
+   <right>
+      <VBox prefHeight="303.0" prefWidth="149.0" spacing="15.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Optionals">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="optionsPowerLocksCB" mnemonicParsing="false" onAction="#selectionChanged" text="Power Locks">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="optionsPowerWindowsCB" mnemonicParsing="false" onAction="#selectionChanged" text="Power Windows">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="optionAirConditionerCB" mnemonicParsing="false" onAction="#selectionChanged" text="Air-Conditioner">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </CheckBox>
+         </children>
+         <BorderPane.margin>
+            <Insets left="20.0" />
+         </BorderPane.margin>
+      </VBox>
+   </right>
+   <left>
+      <VBox prefHeight="303.0" prefWidth="165.0" spacing="10.0" BorderPane.alignment="TOP_RIGHT">
+         <children>
+            <Label fx:id="carType" text="Car Type">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="carTypeChoiceBox" prefHeight="27.0" prefWidth="116.0" />
+            <Label fx:id="color" text="Color">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="carColorChoiceBox" prefHeight="27.0" prefWidth="117.0" />
+            <Label fx:id="extendedInsurance" text="Extended Insurance">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="threeYearInsuranceRButton" mnemonicParsing="false" onAction="#selectionChanged" text="3 years">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="insurance" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="oneYearInsuranceRButton" mnemonicParsing="false" onAction="#selectionChanged" prefHeight="18.0" prefWidth="67.0" text="1 year" toggleGroup="$insurance">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="noneInsuranceRButton" mnemonicParsing="false" onAction="#selectionChanged" text="none" toggleGroup="$insurance">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </RadioButton>
+         </children>
+         <BorderPane.margin>
+            <Insets left="20.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="59.0" prefWidth="669.0" spacing="20.0" BorderPane.alignment="BOTTOM_RIGHT">
+         <children>
+            <Label text="Price$:">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="carPrice" />
+            <Button fx:id="reset" mnemonicParsing="false" onAction="#resetAction" text="Reset">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="exit" mnemonicParsing="false" onAction="#exitAction" prefHeight="27.0" prefWidth="45.0" text="Exit">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <VBox prefHeight="250.0" prefWidth="130.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="carPhoto" fitHeight="201.0" fitWidth="316.0" pickOnBounds="true" preserveRatio="true" />
+            <Label text="Descriptions:">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="descriptions" editable="false" focusTraversable="false" prefHeight="129.0" prefWidth="346.0" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
